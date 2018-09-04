@@ -5,7 +5,7 @@ pipeline {
 	
 		stage('Unit Test') {
 			agent {
-				'apache'
+				label 'apache'
 			}
 			steps {
 				sh 'ant -f test.xml -v'
@@ -15,7 +15,7 @@ pipeline {
 		
 		stage('build') {
 			agent {
-				'apache'
+				label 'apache'
 			}
 			steps {
 				sh 'ant -f build.xml -v'
@@ -24,7 +24,7 @@ pipeline {
 		
 		stage('deploy') {
 			agent {
-				'apache'
+				label 'apache'
 			}
 			steps {
 				sh "cp dist/rectangle_${env.BUILD_NUMBER}.jar /var/www/html/rectangles/all/"
