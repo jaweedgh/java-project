@@ -55,7 +55,9 @@ pipeline {
 			}
 		}
 		stage('Promote artfacts to green') {
-			agent none
+			agent {
+				label 'apache'
+			}
 			steps {
 				sh "cp /var/www/html/rectangles/all/rectangle_${env.BUILD_NUMBER}.jar /var/www/html/rectangles/green/rectangle_${env.BUILD_NUMBER}.jar"
 			}
