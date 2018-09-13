@@ -55,7 +55,7 @@ pipeline {
 				sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 3 4"
 			}
 		}
-		stage('Promote artfacts to green') {
+		stage('Promote to green') {
 			agent {
 				label 'apache'
 			}
@@ -67,7 +67,7 @@ pipeline {
 			}
 		}
 		
-		stage('promote development branch to master') {
+		stage('Promote Development Branch to Master') {
 			agent {
 				label 'apache'
 			}
