@@ -59,7 +59,7 @@ pipeline {
 				sh "java -jar rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar 3 4"
 			}
 		}
-		stage('Promote to green') {
+		stage('Promote to Green') {
 			agent {
 				label 'apache'
 			}
